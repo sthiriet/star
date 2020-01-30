@@ -19,6 +19,7 @@ jobs:
         echo "##[add-path]$Env:WIX"
     - name: Validate prerequisites
       run: |
+        $Env:PATH
         perl -v
         gmake -v
         heat -v
