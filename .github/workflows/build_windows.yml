@@ -15,7 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: set path
-      run: gci env:
+      run: |
+        gci env:
     - name: Validate prerequisites
       run: |
         perl -v
