@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: set path
       run: |
-        gci env:
+        echo "##[add-path]$Env:WIX"
     - name: Validate prerequisites
       run: |
         perl -v
