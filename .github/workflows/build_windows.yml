@@ -15,9 +15,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      
     - name: Validate prerequisites
       run: |
         perl -v
         gmake -v
         heat -v
         light -v
+      env:
+        PATH: ${{PATH}};${{WIX}}
