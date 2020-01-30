@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: set path
-      run: echo "$WIX"
+      run: gci env:
     - name: Validate prerequisites
       run: |
         perl -v
