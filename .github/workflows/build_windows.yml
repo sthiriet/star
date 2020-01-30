@@ -15,9 +15,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: test perl version
-      run: perl -v
-    - name: Run a multi-line script
+    - name: Validate prerequisites
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        perl -v
+        gmake -v
+        heat -v
+        light -v
