@@ -10,17 +10,15 @@ on:
 
 jobs:
   build:
-
     runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
-      
+    - name: set path
+      run: echo "##[add-path]$WIX"
     - name: Validate prerequisites
       run: |
         perl -v
         gmake -v
         heat -v
         light -v
-      env:
-        PATH: ${{PATH}};${{WIX}}
