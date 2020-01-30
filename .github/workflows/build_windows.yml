@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: set path
       run: |
-        echo "##[add-path]$Env:WIX'bin'"
+        echo "##[add-path]${Env:WIX}bin"
     - name: Validate prerequisites
       run: |
         $Env:PATH
