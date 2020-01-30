@@ -24,3 +24,6 @@ jobs:
         gmake -v
         heat -v
         light -v
+    - name: configure
+      run: |
+        perl Configure.pl  --prefix=C:\rakudo --gen-moar
