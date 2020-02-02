@@ -14,7 +14,7 @@ jobs:
       uses: fabriciobastian/download-release-asset-action@v1.0.2
       with:
         version: 2019.11-rc1
-        repository: ${{GITHUB_REPOSITORY}}
+        repository: ${{ env.GITHUB_REPOSITORY }}
         file: rakudo-star-2019.11-rc1.tar.gz
     - name: set path
       run: |
