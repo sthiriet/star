@@ -1,8 +1,9 @@
 name: CI
 
 on:
-  release:
-    types: [prereleased,edited]
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -12,9 +13,9 @@ jobs:
     - name: Download release
       uses: fabriciobastian/download-release-asset-action@v1.0.2
       with:
-        version: ${{GITHUB_REF}}
+        version: 2019.11-rc1
         repository: ${{GITHUB_REPOSITORY}}
-        file: rakudo-star-${{GITHUB_REF}}.tar.gz
+        file: rakudo-star-2019.11-rc1.tar.gz
     - name: set path
       run: |
         echo "##[add-path]${Env:WIX}bin"
