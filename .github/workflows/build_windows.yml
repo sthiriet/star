@@ -11,10 +11,11 @@ jobs:
 
     steps:
     - name: Download release
-      uses: fabriciobastian/download-release-asset-action@v1.0.2
+      uses: Legion2/download-release-action@v2.1.0
       with:
-        version: 2019.11-rc1
         repository: ${{ env.GITHUB_REPOSITORY }}
+        tag: '2019.11-rc1'
+        path: downloads
         file: rakudo-star-2019.11-rc1.tar.gz
     - name: set path
       run: |
