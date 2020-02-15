@@ -11,12 +11,10 @@ jobs:
 
     steps:
     - name: Download release
-      uses: Legion2/download-release-action@v2.1.0
-      with:
-        repository: ${{ env.GITHUB_REPOSITORY }}
-        tag: '2019.11-rc1'
-        path: downloads
-        file: rakudo-star-2019.11-rc1.tar.gz
+      run: |
+        perl -e 'use File::Fetch; 
+        my $ff=File::Fetch->new(uri => "https://github.com/sthiriet/star/releases/download/2019.11-rc1/rakudo-star-2019.11-rc1.tar.gz"); 
+        my $file = $ff->fetch() or die $ff->error;'
     - name: set path
       run: |
         echo "##[add-path]${Env:WIX}bin"
