@@ -14,9 +14,6 @@ jobs:
     - name: Set up Perl
       run: |
         echo "##[add-path]C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin"
-        where gmake
-        $Env:PATH
-        exit 1
     - name: set path
       run: |
         echo "##[add-path]${Env:WIX}bin"
@@ -27,6 +24,7 @@ jobs:
         gmake -v
         heat -v
         light -v
+        where gmake
     - name: Download release
       run: |
         $url = "https://github.com/sthiriet/star/releases/download/${Env:releaseName}/rakudo-star-${Env:releaseName}.tar.gz"
