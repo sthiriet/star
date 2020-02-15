@@ -24,7 +24,8 @@ jobs:
         gmake -v
         heat -v
         light -v
-        where gmake
+        (get-command gmake.exe).Path
+        echo test
     - name: Download release
       run: |
         $url = "https://github.com/sthiriet/star/releases/download/${Env:releaseName}/rakudo-star-${Env:releaseName}.tar.gz"
