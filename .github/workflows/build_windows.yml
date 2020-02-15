@@ -38,15 +38,18 @@ jobs:
     - name: configure
       run: |
         perl Configure.pl  --prefix=C:\rakudo --gen-moar
+      shell: cmd
     - name: make install
       run: |
         gmake install
+      shell: cmd
     - name: Build Msi
       run: |
         cp c:\strawberry\perl\bin\libgcc_s_sjlj-1.dll c:\rakudo\bin
         cp c:\strawberry\perl\bin\libwinpthread-1.dll c:\rakudo\bin
         cp c:\strawberry\perl\bin\libgcc_s_seh-1.dll c:\rakudo\bin
         gmake msi
+      shell: cmd
     - name: release msi
       id: upload-release-asset 
       uses: actions/upload-release-asset@v1
