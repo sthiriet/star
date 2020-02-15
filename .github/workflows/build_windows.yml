@@ -11,6 +11,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - name: Set up Perl
+      run: |
+        choco install strawberryperl
+        echo "##[add-path]C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin"
     - name: set path
       run: |
         echo "##[add-path]${Env:WIX}bin"
