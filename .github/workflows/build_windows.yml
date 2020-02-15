@@ -44,6 +44,8 @@ jobs:
         type Makefile
         gmake install
       shell: cmd
+      env:
+        SHELL: C:\windows\system32\cmd.exe
     - name: Build Msi
       run: |
         cp c:\strawberry\perl\bin\libgcc_s_sjlj-1.dll c:\rakudo\bin
