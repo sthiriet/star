@@ -28,7 +28,7 @@ jobs:
     - name: Extract archive
       run: |
         7z e rakudo-star-2019.11-rc1.tar.gz -y
-        7z e rakudo-star-2019.11-rc1.tar -y
+        7z x rakudo-star-2019.11-rc1.tar -y
         ls
     - name: configure
       run: |
