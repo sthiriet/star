@@ -12,9 +12,9 @@ jobs:
     steps:
     - name: Download release
       run: |
-        perl -e 'use File::Fetch; 
-        my $ff=File::Fetch->new(uri => "https://github.com/sthiriet/star/releases/download/2019.11-rc1/rakudo-star-2019.11-rc1.tar.gz"); 
-        my $file = $ff->fetch() or die $ff->error;'
+        $url = "https://github.com/sthiriet/star/releases/download/2019.11-rc1/rakudo-star-2019.11-rc1.tar.gz"
+        $output = "rakudo-star-2019.11-rc1.tar.gz"
+        Invoke-WebRequest -Uri $url -OutFile $output
     - name: set path
       run: |
         echo "##[add-path]${Env:WIX}bin"
