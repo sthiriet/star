@@ -39,8 +39,9 @@ jobs:
       run: |
         perl Configure.pl  --prefix=C:\rakudo --gen-moar
       shell: cmd
-    - name: make install
+    - name: gmake install
       run: |
+        type Makefile
         gmake install
       shell: cmd
     - name: Build Msi
