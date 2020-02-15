@@ -33,4 +33,5 @@ jobs:
         ls
     - name: configure
       run: |
+        cd rakudo-star-${Env:releaseName}
         perl Configure.pl  --prefix=C:\rakudo --gen-moar
