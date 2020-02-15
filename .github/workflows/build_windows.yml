@@ -18,7 +18,7 @@ jobs:
     - name: set path
       run: |
         echo "##[add-path]${Env:WIX}bin"
-        ls -lrt
+        ls
     - name: Validate prerequisites
       run: |
         $Env:PATH
