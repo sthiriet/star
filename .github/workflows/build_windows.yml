@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - master
-
+env:
+  releaseName: 2019.11-rc1
 jobs:
   build:
     runs-on: windows-latest
@@ -22,13 +23,13 @@ jobs:
         light -v
     - name: Download release
       run: |
-        $url = "https://github.com/sthiriet/star/releases/download/2019.11-rc1/rakudo-star-2019.11-rc1.tar.gz"
-        $output = "rakudo-star-2019.11-rc1.tar.gz"
+        $url = "https://github.com/sthiriet/star/releases/download/$releaseName/rakudo-star-$releaseName.tar.gz"
+        $output = "rakudo-star-$releaseName.tar.gz"
         Invoke-WebRequest -Uri $url -OutFile $output
     - name: Extract archive
       run: |
-        7z e rakudo-star-2019.11-rc1.tar.gz -y
-        7z x rakudo-star-2019.11-rc1.tar -y
+        7z e rakudo-star-$releaseName.tar.gz -y
+        7z x rakudo-star-$releaseName.tar -y
         ls
     - name: configure
       run: |
